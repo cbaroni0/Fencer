@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CharSelect">
+
+    //DUELIST
+
+    <ImageButton
+        android:id="@+id/duelistS"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:onClick="onClick"
+        android:background="@drawable/duelistidle1" />
+
+    //BARBARIAN
+
+    <ImageButton
+        android:id="@+id/barbarianS"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:onClick="onClick"
+        android:background="@drawable/barbarianidle1"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/rogueS" />
+
+    //GUARD
+
+    <ImageButton
+        android:id="@+id/guardS"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignEnd="@+id/heroS"
+        android:layout_below="@+id/heroS"
+        android:onClick="onClick"
+        android:background="@drawable/guardidle1" />
+
+    //ROGUE
+
+    <ImageButton
+        android:id="@+id/rogueS"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:onClick="onClick"
+        android:background="@drawable/rogueidle1"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textStrS" />
+
+    //HERO
+
+    <ImageButton
+        android:id="@+id/heroS"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:onClick="onClick"
+        android:background="@drawable/heroidle1"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/barbarianS" />
+
+    <ProgressBar
+        android:id="@+id/HPS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progress="0"
+        android:progressDrawable="@drawable/statsbar"
+        android:layout_below="@+id/guardS"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <ProgressBar
+        android:id="@+id/strS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progress="0"
+        android:progressDrawable="@drawable/statsbar"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/HPS"
+        android:layout_alignParentStart="true" />
+
+    <ProgressBar
+        android:id="@+id/defS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progress="0"
+        android:progressDrawable="@drawable/statsbar"
+        android:layout_below="@+id/strS"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <ProgressBar
+        android:id="@+id/spdS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progress="0"
+        android:progressDrawable="@drawable/statsbar"
+        android:layout_below="@+id/defS"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <ProgressBar
+        android:id="@+id/balS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progress="0"
+        android:progressDrawable="@drawable/statsbar"
+        android:layout_below="@+id/spdS"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/textViewS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16pt"
+        android:text="Choose A Character"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_above="@+id/HPS"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/guardS"
+        android:layout_below="@+id/duelistS" />
+
+    //stats text
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="HP"
+        android:id="@+id/textHPS"
+        android:layout_below="@+id/textViewS"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Strength"
+        android:id="@+id/textStrS"
+        android:layout_below="@+id/HPS"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Defense"
+        android:id="@+id/textDefS"
+        android:layout_below="@+id/strS"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Speed"
+        android:id="@+id/textSpdS"
+        android:layout_below="@+id/defS"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Balance"
+        android:id="@+id/textBalS"
+        android:layout_below="@+id/spdS"
+        android:layout_alignParentStart="true" />
+
+    //back button
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Return to Main Menu"
+        android:id="@+id/returntommS"
+        android:onClick="onClick"
+        android:layout_below="@+id/balS"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select"
+        android:id="@+id/selectS"
+        android:layout_below="@+id/balS"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="false"
+        android:onClick="onClick" />
+
+</RelativeLayout>

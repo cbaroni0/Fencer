@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".Game">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:background="@drawable/arena"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/P2HP"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/P2text"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/P2text"
+            android:progress="0"
+            android:progressDrawable="@drawable/healthbar"
+            android:layout_marginTop="32dp" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/P2Bal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/P2text"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/P2text"
+            android:progress="0"
+            android:progressDrawable="@drawable/balancebar"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="32dp"
+            android:indeterminate="false" />
+
+        <ProgressBar
+            android:id="@+id/P1HP"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/P1text"
+            android:layout_toEndOf="@+id/P1text"
+            android:progress="0"
+            android:progressDrawable="@drawable/healthbar"
+            android:indeterminate="false"
+            android:layout_alignTop="@+id/P1text"
+            android:layout_marginTop="32dp" />
+
+        <ProgressBar
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:id="@+id/P1Bal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/P1text"
+            android:layout_toEndOf="@+id/P1text"
+            android:progress="0"
+            android:progressDrawable="@drawable/balancebar"
+            android:indeterminate="false"
+            android:layout_alignTop="@+id/P1text"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="32dp" />
+
+        <TextView
+            android:id="@+id/P2text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:text="P2"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#368fe0"
+            android:textSize="48dp" />
+
+        <TextView
+            android:id="@+id/P1text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:text="P1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ff0000"
+            android:textSize="48dp" />
+
+        <ImageView
+            android:id="@+id/P2img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/P1HP"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/P2HP"
+            android:layout_below="@+id/P2HP" />
+
+        <ImageView
+            android:id="@+id/P1img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/P1HP"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/P2HP"
+            android:layout_toStartOf="@+id/P1HP" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ff0000"
+            android:text=""
+            android:id="@+id/downedP1"
+            android:layout_above="@+id/P1HP"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ff0000"
+            android:text=""
+            android:id="@+id/downedP2"
+            android:layout_below="@+id/P2HP"
+            android:layout_centerHorizontal="true" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="257dp"
+        android:layout_weight="1.0"
+        android:background="#2C5197">
+
+        <Button
+            android:id="@+id/Attack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:onClick="onClick"
+            android:text="Attack"
+            android:textSize="36dp" />
+
+        <Button
+            android:id="@+id/Feint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/Attack"
+            android:layout_alignStart="@+id/Attack"
+            android:layout_centerVertical="true"
+            android:onClick="onClick"
+            android:text="Feint"
+            android:textSize="36dp" />
+
+        <Button
+            android:id="@+id/Block"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/Feint"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/Feint"
+            android:onClick="onClick"
+            android:text="Block"
+            android:textSize="36dp" />
+    </RelativeLayout>
+</LinearLayout>
