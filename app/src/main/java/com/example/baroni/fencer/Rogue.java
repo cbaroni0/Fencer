@@ -14,5 +14,10 @@ public class Rogue extends Class{
         name = "Rogue";
     }
 
+    /*Character Notes
+     * -Takes 3* dmg when knocked down
+     */
+
+
 }
 

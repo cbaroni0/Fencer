@@ -14,5 +14,9 @@ public class Guard extends Class{
         name = "Guard";
     }
 
+    /*Character Notes
+     * -if block and opponent atks you get a free atk
+     */
+
 }
 

@@ -14,5 +14,8 @@ public class Barbarian extends Class{
         name = "Barbarian";
     }
 
+    /*Character Notes
+     * -ignores defense
+     */
 }
 

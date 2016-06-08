@@ -203,65 +203,103 @@ public class Game extends Activity {
         switch(view.getId())
         {
             case R.id.Attack:
-                //P1 attack P2 attack
+                /*********************************************************************************
+                P1 attack P2 attack
+                **/
                 if(p2command == 0)  {
                     //if p1 hits
                     if( Math.random()*p2.Balnow < p1.Spd)  {
+                        //barbarian extra dmg
                         if(p1.getClass().getName().equalsIgnoreCase("barbarian")){
                             p2.damage(p1.Str + 1, p1);
                         }
+                        //normal dmg
                         else{
                             p2.damage(p1.Str - p2.Def, p1);
                         }
+                        //extra balance dmg if hit
                         p2.knock(1 + p1.duelKnock(p2));
                     }
+                    //miss
                     else{
+                        // one balance dmg on miss
                         p2.knock(1);
                     }
                     //if p2 hits
                     if( Math.random()*p1.Balnow < p2.Spd) {
+                        //barbarian extra dmg
                         if(p2.getClass().getName().equalsIgnoreCase("barbarian")){
                             p1.damage(p2.Str + 1, p2);
                         }
+                        //normal dmg
                         else{
                             p1.damage(p2.Str - p1.Def, p2);
                         }
+                        //extra balance dmg if hit
                         p1.knock(1 + p2.duelKnock(p1));
                     }
+                    //miss
                     else{
+                        //one balance dmg on miss
                         p1.knock(1);
                     }
-                }// end p1 attack p2 attack
-                // p1 attack p2 block
+                }
+                /**
+                 end P1 attack P2 attack
+                 *********************************************************************************/
+                /*********************************************************************************
+                 P1 attack P2 block
+                 **/
                 else if(p2command == 1){
-                    if( Math.random()*p2.Balnow < p1.Spd){ //if p1 hits
+                    //if p1 hits
+                    if( Math.random()*p2.Balnow < p1.Spd){
                         p2.Balnow += 1; //recover one bal
                     }
-                    else{ //if the attack misses
+                    //if the attack misses
+                    else{
                         p2.Balnow += 2; //recover two bal
                     }
-
+                    //p1 takes balance dmg
                     p1.knock(2 + p1.duelKnock(p2));
+                    //if guard
                     if(p1.getClass().getName().equalsIgnoreCase("guard")){
+                        //guard gets to attack
                         p1.damage(p2.Str - p1.Def, p2);
                     }
                 }
-                // p1 attack p2 feint
+                /**
+                 end P1 attack P2 block
+                 *********************************************************************************/
+                /*********************************************************************************
+                 P1 attack P2 feint
+                 **/
                 else if(p2command == 2){
+                    //p1 regains one balance
                     p1.Balnow += 1;
-                    if( Math.random()*p2.Balnow < p1.Spd){ //if p1 hits
+                    //if p1 hits
+                    if( Math.random()*p2.Balnow < p1.Spd){
+                        //p2 takes extra dmg
                         p2.damage(p1.Str + 1, p1);
+                        //p2 takes extra balance dmg
                         p2.knock(2 + p1.duelKnock(p2));
                     }
+                    //if p1 misses
                     else{
+                        //p2 takes one balance dmg
                         p2.knock(1);
                     }
                 }
+                /**
+                 end P1 attack P2 feint
+                 *********************************************************************************/
                 break;
+
             case R.id.Block:
-                //only happens if p1 isnt downed
+                //only happens if p1 isnt downed. otherwise skips button push
                 if(!(p1.isDowned)) {
-                    //p1 Blocks p2 attacks
+                    /*********************************************************************************
+                     P1 blocks P2 attack
+                     **/
                     if (p2command == 0) {
                         if (Math.random() * p1.Balnow < p2.Spd) { //if p2 hits
                             p1.Balnow += 1; //recover one bal
@@ -274,7 +312,12 @@ public class Game extends Activity {
                             p2.damage(p1.Str - p2.Def, p1);
                         }
                     }
-                    //p1 Blocks p2 Blocks
+                    /**
+                     end P1 block P2 attack
+                     *********************************************************************************/
+                    /*********************************************************************************
+                     P1 block P2 block
+                     **/
                     else if(p2command == 1){
                         if(!(p1.getClass().getName().equalsIgnoreCase("barbarian"))){
                             p1.Balnow += 1;
@@ -290,7 +333,12 @@ public class Game extends Activity {
                             p2.Balnow += 2;
                         }
                     }
-                    //p1 blocks p2 feints
+                    /**
+                     end P1 block P2 block
+                     *********************************************************************************/
+                    /*********************************************************************************
+                     P1 block P2 feint
+                     **/
                     else if(p2command == 2){
                         p2.Balnow += 1;
                         if( Math.random()*p1.Balnow < p2.Spd){ //if p2 hits
@@ -301,6 +349,9 @@ public class Game extends Activity {
                             p1.knock(2);
                         }
                     }
+                    /**
+                     end P1 block P2 feint
+                     *********************************************************************************/
                 }//end downed check
                 break;
             case R.id.Feint:

@@ -14,5 +14,9 @@ public class Duelist extends Class{
         name = "Duelist";
     }
 
+    /*Character Notes
+     * -Cannot be downed
+     */
+
 }
 
