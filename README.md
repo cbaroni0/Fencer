@@ -1,5 +1,5 @@
 # Fencer
-This was my first Android game, created using Java in 2016.
+This was my first Android game, created using Java in 2016. <br/>
 *Note: None of the images used in this game are my own.
 # HOW TO INSTALL
 In order to install this game on your phone:
